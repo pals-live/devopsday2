@@ -19,13 +19,6 @@ jobs:
         with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           enable-AzPSSession: true
-      - name: Azure PowerShell Action
-        uses: Azure/powershell@v1
-        with:
-             inlineScript: |
-               Get-AzResourceGroup
-             azPSVersion: "latest"
- 
       - name: Run ARM deploy
         uses: azure/arm-deploy@v1
         with:
