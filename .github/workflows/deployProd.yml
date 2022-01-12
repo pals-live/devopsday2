@@ -23,4 +23,3 @@ jobs:
         with:
           resourceGroupName: devopsday2
           template: ARM-Templates/container-webapp-template.json
-          parameters: environment=prod
