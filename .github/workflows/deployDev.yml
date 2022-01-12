@@ -1,27 +1,26 @@
-name: deployDev.yml
+name: Azure ARM Dev
+
 on:
   push:
     paths:
-      - '**'
-      - '!.github/workflows/**'
       - '.github/workflows/deployDev.yml'
-      
-permissions:
-      id-token: write
-      contents: read
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Log in with Azure
+      - name: 'Az CLI login'
         uses: azure/login@v1
         with:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
-          enable-AzPSSession: true
-      - name: Run ARM deploy
+
+      - name: 'Checkout file'
+        uses: actions/checkout@v2
+
+
+      - name: Run ARM deploy Dev
         uses: azure/arm-deploy@v1
         with:
-            subscriptionId: "5dcedb53-6662-448c-bad5-9f7fb6155570"
-            resourceGroupName: "devopsday2"
-            template: ./ARM-Templates/container-webapp-template.json 
+          resourceGroupName: devopsday2
+          template: ARM-Templates/container-webapp-template.json
