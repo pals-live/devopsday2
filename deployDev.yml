@@ -1,0 +1,19 @@
+name: GitHub Actions Demo
+on: 
+  push:
+    paths:
+      include:
+      - deploydev.yml
+
+permissions:
+id-token: write
+contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in with Azure
+        uses: azure/login@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
