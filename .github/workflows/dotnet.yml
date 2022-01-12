@@ -21,9 +21,9 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1
-    - name: Restore dependencies 'src/RazorPagesTestSample/RazorPagesTestSample.csproj'
-      run: dotnet restore
-    - name: Build 'src/RazorPagesTestSample/RazorPagesTestSample.csproj'
-      run: dotnet build --no-restore
-    - name: Test 'tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj'
-      run: dotnet test --no-build --verbosity normal
+    - name: Restore dependencies 
+      run: dotnet restore 'src/RazorPagesTestSample/RazorPagesTestSample.csproj'
+    - name: Build 
+      run: dotnet build 'src/RazorPagesTestSample/RazorPagesTestSample.csproj' --no-restore
+    - name: Test 
+      run: dotnet 'tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj' test --no-build --verbosity normal
