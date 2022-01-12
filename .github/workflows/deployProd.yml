@@ -1,0 +1,26 @@
+name: Azure ARM Dev2
+
+on:
+  push:
+    paths:
+      - '.github/workflows/deployProd.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Az CLI login'
+        uses: azure/login@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+
+      - name: 'Checkout file'
+        uses: actions/checkout@v2
+
+      - name: Run ARM deploy Dev
+        uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: devopsday2
+          template: ARM-Templates/container-webapp-template.json
+          parameters: environment=prod
