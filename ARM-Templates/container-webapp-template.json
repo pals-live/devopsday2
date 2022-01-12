@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "defaultValue": "<prefix>devops-dev",
+            "defaultValue": "pslivdevops-dev",
             "type": "String"
         },
         "hostingPlanName": {
-            "defaultValue": "<prefix>devops-asp",
+            "defaultValue": "pslivdevops-asp",
             "type": "String"
         },
         "appInsightsLocation": {
-            "defaultValue": "South Central US",
+            "defaultValue": "West Europe",
             "type": "String"
         },
         "appInsightsName": {
-            "defaultValue": "<prefix>devops-ai",
+            "defaultValue": "pslivdevops-ai",
             "type": "String"
         },        
         "sku": {
@@ -23,15 +23,15 @@
             "type": "String"
         },
         "registryName": {
-            "defaultValue": "<prefix>devopsreg",
+            "defaultValue": "pslivdevopsreg",
             "type": "String"
         },
         "imageName": {
-            "defaultValue": "<prefix>devopsimage",
+            "defaultValue": "pslivdevopsimage",
             "type":"String"
         },
         "registryLocation": {
-            "defaultValue": "South Central US",
+            "defaultValue": "West Europe",
             "type": "String"
         },
         "registrySku": {
