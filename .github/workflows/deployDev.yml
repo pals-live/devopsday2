@@ -17,8 +17,7 @@ jobs:
 
       - name: 'Checkout file'
         uses: actions/checkout@v2
-
-
+        
       - name: Run ARM deploy Dev
         uses: azure/arm-deploy@v1
         with:
